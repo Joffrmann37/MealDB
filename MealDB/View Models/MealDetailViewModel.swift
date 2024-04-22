@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// MARK - View model is used as datasource for meal details
 class MealDetailViewModel: ObservableObject {
     var useCase: FetchMealDetailUseCase
     private var subscriptions = Set<AnyCancellable>()

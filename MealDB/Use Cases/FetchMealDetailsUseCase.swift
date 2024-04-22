@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// MARK - Represents the use case of fetching meal details
 class FetchMealDetailUseCase {
     let repository: Serviceable
     

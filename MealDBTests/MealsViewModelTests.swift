@@ -10,6 +10,7 @@ import XCTest
 import Combine
 
 final class FlickrItemsViewModelTests: XCTestCase {
+    // MARK - Ensuring that meals are retrieved from api call.
     func test_DidGetItemsJSON() {
         let vm = MealsViewModelSpy(useCase: FetchMealsUseCase(repository: MealDBRepositorySpy()))
         let exp = expectation(description: "Wait for task")
@@ -17,6 +18,7 @@ final class FlickrItemsViewModelTests: XCTestCase {
         XCTAssertTrue(expectedItems.count > 0)
     }
     
+    // MARK - Returns meals with expectation
     private func testWithExpectation(vm: MealsViewModelSpy, exp: XCTestExpectation, timeout: Double = 3, file: StaticString = #file, line: UInt = #line) -> [Meal] {
         var itemsToCompare = [Meal]()
         vm.fetchItems()

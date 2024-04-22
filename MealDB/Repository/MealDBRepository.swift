@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// MARK - Enum used to represent error cases
 enum MealDBError: Int, Swift.Error {
     case badRequest = 400
     case forbidden = 403
@@ -16,6 +17,7 @@ enum MealDBError: Int, Swift.Error {
     case notAcceptable = 406
 }
 
+// MARK - Protocol that any repository would use to make service calls. Returns a Future which is similar to a promise in JS.
 protocol Serviceable {
     func fetch<T>(url: URL, forType type: T.Type) -> Future<T, MealDBError> where T : Decodable
 }
